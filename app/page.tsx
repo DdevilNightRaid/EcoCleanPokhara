@@ -1,3 +1,4 @@
+import ClientCoresel from "@/components/ClientCoresel";
 import { Clients, ClientsFeedback } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
@@ -129,43 +130,7 @@ export default function Home() {
               width={420}
             />
           </div>
-          <div
-            className="flex flex-col gap-8"
-          >
-            {
-              ClientsFeedback.map((info) => (
-                <div
-                  className="shadow-[2px_2px_6px_-2px_#4a5759] rounded-sm p-2"
-                  key={info.key}
-                >
-                  <div
-                    className="flex gap-4"
-                  >
-                    <div
-                      className="h-[3rem] w-[3rem] rounded-full"
-                    >
-                      <Image
-                        src={info.profile}
-                        alt="Hero Image Here"
-                        height={250}
-                        width={220}
-                        className="rounded-full"
-                      />
-                    </div>
-                    <div
-                      className="flex flex-col"
-                    >
-                      <p className="text-[1rem] font-Poppins font-medium">{info.name}</p>
-                      <p className="text-[0.8rem] font-neuton ">Customer</p>
-                    </div>
-                  </div>
-                  <div className="py-2">
-                    <p className="text-[0.8rem] font-Poppins font-light">{info.text}</p>
-                  </div>
-                </div>
-              ))
-            }
-          </div>
+          
         </div>
         <div>
           <h2 className="font-Poppins font-medium text-[1.1rem] md:text-[2rem]">CLIENTS WHO TRUSTED US</h2>
@@ -189,6 +154,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <ClientCoresel/>
       <section
         className="flex flex-col gap-4 py-2"
       >
